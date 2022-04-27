@@ -49,7 +49,7 @@ public class GroupController {
         Group result = groupRepository.save(group);
         return ResponseEntity.ok().body(result);
     }
-
+    @DeleteMapping("/group/{id}")
     public ResponseEntity<?> deleteGroup(@PathVariable Long id) {
         log.info("Request to delete group: {}", id);
         groupRepository.deleteById(id);
